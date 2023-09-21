@@ -1,0 +1,14 @@
+[
+  {
+    "name": "from_city",
+    "pattern": "(\\bbrussels\\b|\\bzagreb\\b|\\blondon\\b|\\blisbon\\b|\\bamsterdam\\b)"
+  },
+  {
+    "name": "to_city",
+    "pattern": "(\\bbrussels\\b|\\bzagreb\\b|\\blondon\\b|\\blisbon\\b|\\bamsterdam\\b)"
+  },
+  {
+    "name": "departure_date",
+    "pattern": "(\\btoday\\b|\\btomorrow\\b|\\btwo\\ days\\ later\\b|\\bthree\\ days\\ later\\b)"
+  }
+]
