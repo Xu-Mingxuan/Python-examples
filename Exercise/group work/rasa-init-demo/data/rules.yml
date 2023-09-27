@@ -16,7 +16,7 @@ rules:
   steps:
   - intent: book_flight
   - action: simple_city_form
-  - active_loop: simple_city_form67890
+  - active_loop: simple_city_form
 
 
 - rule: Submit The Simpe_ticket_form

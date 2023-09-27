@@ -40,3 +40,8 @@ action_endpoint:
 #  username: username
 #  password: password
 #  queue: queue
+
+event_broker:  
+  type: sql
+  dialect: "sqlite"  # the dialect used to interact with the db
+  db: 'D:\rasa\rasa-init-demo\flight.db'  # path to your db
