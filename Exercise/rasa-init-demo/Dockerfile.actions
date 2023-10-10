@@ -1,0 +1,4 @@
+FROM rasa/rasa-sdk:latest
+USER root
+RUN pip install arrow dateparser -i https://pypi.tuna.tsinghua.edu.cn/simple  --no-cache-dir
+USER 1001

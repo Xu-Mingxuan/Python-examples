@@ -1,0 +1,285 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: book_flight
+#   - action: simple_city_form
+#   - active_loop: simple_city_form
+#   - slot_was_set:
+#     - requested_slot: name
+#   - intent: tell_name
+#     entities:
+#     - name: wangwu
+#   - slot_was_set:
+#     - name: wangwu
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - name: wangwu
+#   - slot_was_set:
+#     - requested_slot: from_city
+#   - intent: inform
+#     entities:
+#     - from_city: shanghai
+#   - slot_was_set:
+#     - from_city: shanghai
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - from_city: shanghai
+#   - slot_was_set:
+#     - requested_slot: to_city
+#   - intent: inform
+#     entities:
+#     - to_city: nanjing
+#   - slot_was_set:
+#     - to_city: nanjing
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - to_city: nanjing
+#   - slot_was_set:
+#     - requested_slot: departure_date
+#   - intent: inform
+#     entities:
+#     - departure_date: '9.2'
+#   - slot_was_set:
+#     - departure_date: '9.2'
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - departure_date: '9.2'
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_submit
+#   - action: utter_confirm_booking
+#   - action: action_enter_message
+
+
+
+- story: interactive_story_2
+  steps:
+  - intent: book_flight
+  - action: simple_city_form
+  - active_loop: simple_city_form
+  - slot_was_set:
+    - requested_slot: name
+  - intent: tell_name
+    entities:
+    - name: lisi
+  - slot_was_set:
+    - name: lisi
+  - action: simple_city_form
+  - slot_was_set:
+    - name: lisi
+  - slot_was_set:
+    - requested_slot: from_city
+  - intent: inform
+    entities:
+    - from_city: beijing
+  - slot_was_set:
+    - from_city: beijing
+  - action: simple_city_form
+  - slot_was_set:
+    - from_city: beijing
+  - slot_was_set:
+    - requested_slot: to_city
+  - intent: inform
+    entities:
+    - to_city: shanghai
+  - slot_was_set:
+    - to_city: shanghai
+  - action: simple_city_form
+  - slot_was_set:
+    - to_city: shanghai
+  - slot_was_set:
+    - requested_slot: departure_date
+  - intent: inform
+    entities:
+    - departure_date: '9.13'
+  - slot_was_set:
+    - departure_date: '9.13'
+  - action: simple_city_form
+
+# - story: interactive_story_1
+#   steps:
+#   - intent: book_flight
+#   - action: simple_city_form
+#   - active_loop: simple_city_form
+#   - slot_was_set:
+#     - requested_slot: name
+#   - intent: tell_name
+#     entities:
+#     - name: zhaoliu
+#   - slot_was_set:
+#     - name: zhaoliu
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - name: zhaoliu
+#   - slot_was_set:
+#     - requested_slot: from_city
+#   - intent: inform
+#     entities:
+#     - from_city: nanjing
+#   - slot_was_set:
+#     - from_city: nanjing
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - from_city: nanjing
+#   - slot_was_set:
+#     - requested_slot: to_city
+#   - intent: inform
+#     entities:
+#     - to_city: beijing
+#   - slot_was_set:
+#     - to_city: beijing
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - to_city: null
+#   - slot_was_set:
+#     - requested_slot: to_city
+#   - intent: inform
+#     entities:
+#     - departure_date: '6.3'
+#   - slot_was_set:
+#     - departure_date: '6.3'
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - departure_date: null
+#   - slot_was_set:
+#     - requested_slot: to_city
+#   - intent: inform
+#     entities:
+#     - to_city: shanghai
+#   - slot_was_set:
+#     - to_city: shanghai
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - to_city: shanghai
+#   - slot_was_set:
+#     - requested_slot: departure_date
+#   - intent: inform
+#     entities:
+#     - departure_date: '6.3'
+#   - slot_was_set:
+#     - departure_date: '6.3'
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - departure_date: null
+#   - slot_was_set:
+#     - requested_slot: departure_date
+#   - intent: inform
+#     entities:
+#     - departure_date: '9.16'
+#   - slot_was_set:
+#     - departure_date: '9.16'
+#   - action: simple_city_form
+#   - slot_was_set:
+#     - departure_date: '9.16'
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_submit
+#   - action: utter_confirm_booking
+#   - action: action_enter_message
+
+- story: interactive_story_1
+  steps:
+  - intent: inquire_message
+    entities:
+    - name: zhaoliu
+  - slot_was_set:
+    - name: zhaoliu
+  - action: action_inquire_message
+
+- story: interactive_story_2
+  steps:
+  - intent: inquire_message
+    entities:
+    - name: lisi
+  - slot_was_set:
+    - name: lisi
+  - action: action_inquire_message
+
+
+- story: interactive_story_1
+  steps:
+  - intent: delet_ticket
+  - action: action_delet_ticket
+  - intent: tell_name
+    entities:
+    - name: zhaoliu
+  - slot_was_set:
+    - name: zhaoliu
+  - action: action_delet_ticket
+
+
+- story: interactive_story_2
+  steps:
+  - intent: delet_ticket
+  - action: action_delet_ticket
+  - intent: tell_name
+    entities:
+    - name: wangwu
+  - slot_was_set:
+    - name: wangwu
+  - action: action_delet_ticket
+
+
+
+- story: interactive_story_2
+  steps:
+  - intent: tell_name
+    entities:
+    - name: lisi
+  - slot_was_set:
+    - name: lisi
+  - action: action_inquire_message
+
+
+- story: interactive_story_3
+  steps:
+  - intent: tell_name
+    entities:
+    - name: wangwu
+  - slot_was_set:
+    - name: wangwu
+  - action: action_inquire_message
+
+
+- story: interactive_story_4
+  steps:
+  - intent: tell_name
+    entities:
+    - name: zhangsan
+  - slot_was_set:
+    - name: zhangsan
+  - action: action_inquire_message
+

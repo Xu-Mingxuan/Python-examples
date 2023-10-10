@@ -1,0 +1,65 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Activate the ticket form
+  steps:
+  - intent: book_flight
+  - action: simple_city_form
+  - active_loop: simple_city_form
+
+
+- rule: Submit The Simpe_ticket_form
+  condition:
+  - active_loop: simple_city_form
+  steps:
+  - action: simple_city_form
+  - active_loop: null
+  - slot_was_set: 
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_confirm_booking
+  - action: action_enter_message
+
+- rule: Tell the time
+  steps:
+  - intent: inquire_time
+  - action: action_tell_time
+
+
+- rule: delet_flight
+  steps:
+  - intent: delet_ticket
+  - action: action_delet_ticket
+
+
+- rule: inquire_message
+  steps:
+  - intent: inquire_message
+  - action: action_inquire_message
+
+  
+#   - action: inquire_name_form
+#   - active_loop: inquire_name_form
+
+# - rule: submit inquire_name_form
+#   condition:
+#   - active_loop: inquire_name_form
+#   steps:
+#   -action: inquire_name_form
+#   - active_loop: null
+#   - slot_was_set: 
+#     - requested_slot: null
+#   - action: utter_get_name
+
+

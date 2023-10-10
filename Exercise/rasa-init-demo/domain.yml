@@ -1,0 +1,103 @@
+version: '3.1'
+intents:
+- affirm
+- book_flight
+- bot_challenge
+- delet_ticket
+- deny
+- goodbye
+- greet
+- inform
+- inquire_message
+- inquire_time
+- mood_great
+- mood_unhappy
+- request_ticket_form
+- tell_name
+- thank_you
+entities:
+- name
+- departure_date
+- from_city
+- to_city
+- place
+slots:
+  place:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: place
+  from_city:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: from_city
+  to_city:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: to_city
+  departure_date:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: departure_date
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: name
+forms:
+  simple_city_form:
+    required_slots:
+    - name
+    - from_city
+    - to_city
+    - departure_date
+responses:
+  utter_greet:
+  - text: Hey! I am a bot working for fly me?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, working for fly me, what can I do for you.
+  utter_confirm_booking:
+  - text: OK,I will book the ticket for you(from {from_city} to {to_city}),the department date is {departure_date}.
+  utter_ask_from_city:
+  - text: What the city you come from?
+  utter_ask_to_city:
+  - text: What the city you go to?
+  utter_ask_departure_date:
+  - text: When do you want to set off?
+  utter_submit:
+  - text: I will book a ticket for you.
+  utter_ask_name:
+  - text: What is your name
+  utter_affirm:
+  - text: Are you sure about your ticket?
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+actions:
+- utter_greet
+- action_enter_message
+- utter_confirm_booking
+- utter_submit
+- action_delet_ticket
+- action_inquire_message
+- action_tell_time
+- validate_simple_city_form
+- validate_inquire_name_form
+- utter_confirm_name

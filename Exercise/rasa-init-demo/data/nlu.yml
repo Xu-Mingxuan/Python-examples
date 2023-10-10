@@ -1,0 +1,242 @@
+version: "3.1"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: book_flight
+  examples: |
+    - I want to book a ticket
+    - Please book a ticket for me
+    - book ticket from [beijing](from_city) to [nanjing](to_city)
+    - book ticket from [beijing](from_city) to [shanghai](to_city)
+    - book ticket from [beijing](from_city) to [chongqing](to_city)
+    - book ticket from [beijing](from_city) to [tianjing](to_city)
+    - book ticket from [shanghai](from_city) to [beijing](to_city)
+    - book ticket from [shanghai](from_city) to [nanjing](to_city)
+    - book ticket from [shanghai](from_city) to [chongqing](to_city)
+    - book ticket from [shanghai](from_city) to [tianjing](to_city)
+    - book ticket from [nanjing](from_city) to [beijing](to_city)
+    - book ticket from [nanjing](from_city) to [shanghai](to_city)
+    - book ticket from [nanjing](from_city) to [chongqing](to_city)
+    - book ticket from [nanjing](from_city) to [tianjing](to_city)
+    - book ticket from [chongqing](from_city) to [beijing](to_city)
+    - book ticket from [chongqing](from_city) to [shanghai](to_city)
+    - book ticket from [chongqing](from_city) to [nanjing](to_city)
+    - book ticket from [chongqing](from_city) to [tianjing](to_city)
+    - Can you help me buy the ticket from [beijing](from_city) to [shanghai](to_city) in [9.5](departure_date)
+    - I want to buy the ticket from [beijing](from_city) to [nanjing](to_city) in [9.3](departure_date)
+    - I want to buy the ticket from [nanjing](from_city) to [shanghai](to_city)
+    - I want to buy a ticket from [beijing](from_city)
+    - I want to buy a ticket to [nanjing](to_city)
+    - I want to buy a ticket [9.2](departure_date)
+    - I want a ticket to [shanghai](from_city)
+    - I want to buy a ticket from [nanjing](from_city)
+    - book ticket
+    - book ticket from [beijing](from_city)
+- intent: inform
+  examples: |
+    - I want to buy a ticket from [nanjing](from_city)
+    - I want to buy a ticket from [beijing](from_city)
+    - I want to buy a ticket from [shanghai](from_city)
+    - I want to buy a ticket from [chongqing](from_city)
+    - I want to buy a ticket to [nanjing](to_city)
+    - I want to buy a ticket to [beijing](to_city)
+    - I want to buy a ticket to [shanghai](to_city)
+    - I want to buy a ticket to [chongqing](to_city)
+    - I want to buy a ticket [9.2](departure_date)
+    - I want to buy a ticket [9.3](departure_date)
+    - I want to buy a ticket [9.4](departure_date)
+    - I want to buy a ticket [9.6](departure_date)
+    - I want to buy a ticket [9.7](departure_date)
+    - I want to buy a ticket [9.8](departure_date)
+    - I want to buy a ticket [9.10](departure_date)
+    - from [beijing](from_city)
+    - from [nanjing](from_city)
+    - from [shanghai](from_city)
+    - from [chongqing](from_city)
+    - from [kunming](from_city)
+    - from [tianjing](from_city)
+    - from [guangzhou](from_city)
+    - from [shenzhen](from_city)
+    - from [chengdu](from_city)
+    - from [wuhan](from_city)
+    - from [xian](from_city)
+    - from [hangzhou](from_city)
+    - from [suzhou](from_city)
+    - from [wuxi](from_city)
+    - to [shanghai](to_city)
+    - to [nanjing](to_city)
+    - to [beijing](to_city)
+    - to [chongqing](to_city)
+    - to [kunming](to_city)
+    - to [tianjing](to_city)
+    - to [guangzhou](to_city)
+    - to [shenzhen](to_city)
+    - to [chengdu](to_city)
+    - to [wuhan](to_city)
+    - to [xian](to_city)
+    - to [hangzhou](to_city)
+    - to [suzhou](to_city)
+    - to [wuxi](to_city)
+    - in [9.3](departure_date)
+    - [9.2](departure_date)
+    - [9.13](departure_date)
+    - [6.3](departure_date)
+    - [9.16](departure_date)
+- intent: inquire_time
+  examples: |
+    - What time is it?
+    - What time is it in [brussels](place)?
+    - What time is it in [beijing](place)?
+    - What time is it in [zagreb](place)?
+    - Tell me the time in [london](place)?
+    - What is the current time in [amsterdam](place)?
+    - what time is it [lisbon](place)?
+    - [beiing](place)
+- intent: delet_ticket
+  examples: |
+    - I want to delet a flight
+    - I want to cancle a flight
+    - I want to delet a ticket
+    - delet a ticket
+    - cancle a flight
+    - delet a flight
+    - delet ticket
+- intent: tell_name
+  examples: |
+    - My name is [zhangsan](name)
+    - I am [lisi](name)
+    - I am [wangwu](name)
+    - I am [zhaoliu](name)
+    - I am [zhangsan](name)
+    - [zhangsan](name)
+    - [lisi](name)
+    - [wangwu](name)
+    - [zhaoliu](name)
+    - My name is [zhaoliu](name)
+    - My name is [wangwu](name)
+    - My name is [lisi](name)
+    - [lisi](name)
+- intent: inquire_message
+  examples: |
+    - I want to know the flight information
+    - I want to know the flight information of [zhaoliu](name)
+    - I want to know the flight information of [wangwu](name)
+    - I want to know the flight information of [lisi](name)
+    - I want to know the flight information of [zhangsan](name)
+    - tell me the flight imformation
+    - tell me the flight imformation of [zhangsan](name)
+    - tell me the flight imformation of [lisi](name)
+    - tell me the flight imformation of [wangwu](name)
+    - tell me the flight imformation of [zhaoliu](name)
+    - flight information
+    - flight information of [zhangsan](name)
+    - flight information of [lisi](name)
+    - flight information of [wangwu](name)
+    - flight information of [zhaoliu](name)
+- lookup: from_city
+  examples: |
+    - brussels
+    - zagreb
+    - london
+    - lisbon
+    - amsterdam
+- lookup: to_city
+  examples: |
+    - brussels
+    - zagreb
+    - london
+    - lisbon
+    - amsterdam
+- lookup: departure_date
+  examples: |
+    - today
+    - tomorrow
+    - two days later
+    - three days later
+- lookup: place
+  examples: |
+    - brussels
+    - zagreb
+    - london
+    - lisbon
+    - amsterdam
